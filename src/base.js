@@ -6,7 +6,7 @@ var max_speed = 10;
 var click_increment = 1;
 var all_spinners = new Array();
 var spinner = null;
-
+var app = null;
 
 
 
@@ -18,20 +18,29 @@ function resize(){
 }
 
 function load_stage(){
-	var renderer = PIXI.autoDetectRenderer(256, 256);
-	document.getElementById("pixi-container").appendChild(renderer.view);
-	var stage = new PIXI.Container();
-	renderer.render(stage);
+    app = new PIXI.Application(800, 600, {backgroundColor : 0x3ed1f2});
+	document.getElementById("pixi-container").appendChild(app.view);
 }
 
+function load_textures(){
+    var texture = PIXI.utils.TextureCache["images/spinner-fixed2.png"]
+    var sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
+
+    sprite.anchor.set(0.5);
+    sprite.x = app.renderer.width / 2;
+    sprite.y = app.renderer.height / 2;
+    sprite.height = 200;
+    sprite.width = 200;
+
+    app.stage.addChild(sprite);
+}
 
 function game_setup(){
-	create_objects();
-	clicks_setup();
 	load_stage();
-	game_loop();
+    load_textures();
 }
 
+/*
 function clicks_setup(){
 
 	console.log("Document loaded");
@@ -55,3 +64,4 @@ function game_loop(){
 
 
 game_setup()
+*/
