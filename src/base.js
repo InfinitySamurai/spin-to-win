@@ -8,36 +8,27 @@ var all_spinners = new Array();
 var spinner = null;
 
 
-function Spinner(start_speed, decay, max_speed){
-	this.speed = start_speed;
-	this.decay = decay;
-	this.max_speed = max_speed;
-	this.angle = 0;
+
+
+window.onload = game_setup;
+window.onresize = resize;
+
+function resize(){
+	console.log("I've been resized!!");
 }
 
-Spinner.prototype.changeSpeed = function(amount){
-	this.speed += amount;
-
-	if(this.speed > this.max_speed){
-		this.speed = this.max_speed;
-	}
-	else if(this.speed < 0){
-		this.speed = 0;
-	}
-	
+function load_stage(){
+	var renderer = PIXI.autoDetectRenderer(256, 256);
+	document.getElementById("pixi-container").appendChild(renderer.view);
+	var stage = new PIXI.Container();
+	renderer.render(stage);
 }
-
-Spinner.prototype.update = function(){
-	this.changeSpeed(-this.decay);
-	this.angle += this.speed;
-}
-
-$(document).ready(game_setup);
 
 
 function game_setup(){
-	clicks_setup();
 	create_objects();
+	clicks_setup();
+	load_stage();
 	game_loop();
 }
 
@@ -62,10 +53,5 @@ function game_loop(){
 	}, tickrate);
 }
 
-function increase(base_number, amount){
-	base_number += amount;
-	base_number = base_number.toFixed(2);
-	return base_number;
-}
 
 game_setup()
