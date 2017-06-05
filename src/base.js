@@ -1,30 +1,19 @@
 var tickrate = 60;
-var angle = 0;
-var speed = 0;
-var decay = 0.1;
-var max_speed = 10;
-var click_increment = 1;
-var all_spinners = new Array();
 var spinner = null;
 var app = null;
+var sprite = null;
 
 
 
 window.onload = game_setup;
-window.onresize = resize;
-
-function resize(){
-	console.log("I've been resized!!");
-}
 
 function load_stage(){
     app = new PIXI.Application(800, 600, {backgroundColor : 0x3ed1f2});
 	document.getElementById("pixi-container").appendChild(app.view);
-}
+};
 
 function load_textures(){
-    var texture = PIXI.utils.TextureCache["images/spinner-fixed2.png"]
-    var sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
+    sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
 
     sprite.anchor.set(0.5);
     sprite.x = app.renderer.width / 2;
@@ -33,11 +22,23 @@ function load_textures(){
     sprite.width = 200;
 
     app.stage.addChild(sprite);
-}
+};
+
+function create_objects(){
+    spinner = new Spinner(0.1, 0.001, 10);
+};
+
+function game_loop(){
+    app.ticker.add(function(delta) {
+        spinner.update(delta);
+    });
+};
 
 function game_setup(){
 	load_stage();
     load_textures();
+    create_objects();
+    game_loop();
 }
 
 /*
