@@ -14,6 +14,7 @@ function load_stage(){
 
 function load_textures(){
     sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
+    sprite.interactive = true;
 
     sprite.anchor.set(0.5);
     sprite.x = app.renderer.width / 2;
@@ -25,7 +26,8 @@ function load_textures(){
 };
 
 function create_objects(){
-    spinner = new Spinner(0.1, 0.001, 10);
+    spinner = new Spinner(0.1, 0.001, 10, sprite);
+
 };
 
 function game_loop(){
