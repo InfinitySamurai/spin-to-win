@@ -29,6 +29,6 @@ function Spinner(start_speed, decay, max_speed, sprite){
         console.log("spinner got clicked");
     };
 
-    this.sprite.on('mousedown', this.onClick);
+    this.sprite.on('mousedown', this.onClick, this);
 };
 
