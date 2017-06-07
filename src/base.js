@@ -1,5 +1,5 @@
 var tickrate = 60;
-var circle_degrees = 360;
+var circle_radians = 2*Math.PI;
 var spinner = null;
 var app = null;
 var sprite = null;

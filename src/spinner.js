@@ -1,30 +1,29 @@
 function Spinner(start_speed, decay, max_speed, sprite){
-    this.speed = null
-	this.nice_speed = start_speed;
-    this.decay = null;
-	this.nice_decay = decay;
-    this.decay_on = false;
-	this.nice_max_speed = max_speed;
-    this.max_speed = null
+    this.speed_final = null
+	this.speed = start_speed;
+    this.decay_final = null;
+	this.decay = decay;
+    this.decay_on = true;
+	this.max_speed = max_speed;
+    this.max_speed_final = null
     this.sprite = sprite;
-	this.angle = 0;
-    this.nice_click_strength = 1;
-    this.click_strength = null;
+    this.click_strength = 1;
+    this.click_strength_final = null;
 
     
     this.adjusted_numbers = function(tickrate){
-        this.speed = this.nice_speed/tickrate;
-        this.decay = this.nice_decay/tickrate;
-        this.max_speed = this.nice_max_speed/tickrate;
-        this.click_strength = this.nice_click_strength/tickrate;
+        this.speed_final = this.speed/tickrate*circle_radians;
+        this.decay_final = this.decay/tickrate;
+        this.max_speed_final = this.max_speed/tickrate;
+        this.click_strength_final = this.click_strength/tickrate;
     }
 
     this.update = function(delta){
+        this.adjusted_numbers(tickrate);
         if(this.decay_on){
             this.changeSpeed(-this.decay*delta);
         }
-        this.angle += this.speed/tickrate*circle_degrees;
-        this.sprite.rotation += spinner.speed * delta;
+        this.sprite.rotation += spinner.speed_final;
     };
 
     this.changeSpeed = function(amount){
@@ -43,7 +42,5 @@ function Spinner(start_speed, decay, max_speed, sprite){
     };
 
     this.sprite.on('mousedown', this.onClick, this);
-
-    this.adjusted_numbers(tickrate);
 };
 
