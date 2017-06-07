@@ -1,4 +1,5 @@
 var tickrate = 60;
+var circle_degrees = 360;
 var spinner = null;
 var app = null;
 var sprite = null;
@@ -26,7 +27,7 @@ function load_textures(){
 };
 
 function create_objects(){
-    spinner = new Spinner(0.1, 0.001, 10, sprite);
+    spinner = new Spinner(1, 0.1, 10, sprite);
 
 };
 
