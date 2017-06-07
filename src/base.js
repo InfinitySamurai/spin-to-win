@@ -3,13 +3,14 @@ var circle_radians = 2*Math.PI;
 var spinner = null;
 var app = null;
 var sprite = null;
+var resolution = { x:1024, y:768};
 
 
 
 window.onload = game_setup;
 
 function load_stage(){
-    app = new PIXI.Application(800, 600, {backgroundColor : 0x3ed1f2});
+    app = new PIXI.Application(resolution.x, resolution.y, {backgroundColor : 0x3ed1f2});
 	document.getElementById("pixi-container").appendChild(app.view);
 };
 
