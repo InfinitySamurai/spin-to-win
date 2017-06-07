@@ -1,4 +1,4 @@
-function Spinner(start_speed, decay, max_speed, sprite){
+function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     this.speed_final = null
 	this.speed = start_speed;
     this.decay_final = null;
@@ -7,7 +7,7 @@ function Spinner(start_speed, decay, max_speed, sprite){
 	this.max_speed = max_speed;
     this.max_speed_final = null
     this.sprite = sprite;
-    this.click_strength = 1;
+    this.click_strength = click_strength;
     this.click_strength_final = null;
 
     
