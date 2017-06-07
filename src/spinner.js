@@ -21,7 +21,7 @@ function Spinner(start_speed, decay, max_speed, sprite){
     this.update = function(delta){
         this.adjusted_numbers(tickrate);
         if(this.decay_on){
-            this.changeSpeed(-this.decay*delta);
+            this.changeSpeed(-this.decay_final*delta);
         }
         this.sprite.rotation += spinner.speed_final;
     };
