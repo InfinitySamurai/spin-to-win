@@ -4,6 +4,7 @@ var spinner = null;
 var app = null;
 var sprite = null;
 var resolution = { x:1024, y:768};
+var testbox = null
 
 
 
@@ -32,6 +33,11 @@ function create_objects(){
 
 };
 
+function create_text(){
+    testbox = new TextBox(30,30,"lulboxhere");
+    app.stage.addChild(testbox.pixitext);
+}
+
 function game_loop(){
     app.ticker.add(function(delta) {
         spinner.update(delta);
@@ -42,6 +48,7 @@ function game_setup(){
 	load_stage();
     load_textures();
     create_objects();
+    create_text();
     game_loop();
 }
 
