@@ -1,9 +1,10 @@
 function UI(){
     this.ui_elements = [];
-    this.box = new VarTextBox(30,30,"Speed: ", spinner, "speed");
-    this.ui_elements.push(this.box);
+    this.ui_elements.push(new VarTextBox(30,30, spinner, "speed"));
+    this.ui_elements.push(new VarTextBox(30,100, spinner, "decay"));
+    this.ui_elements.push(new VarTextBox(30,200, spinner, "max_speed"));
 
-
+    
     for(var i = 0; i < this.ui_elements.length; i++){
         app.stage.addChild(this.ui_elements[i].textbox);
     }

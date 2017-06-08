@@ -1,14 +1,13 @@
-function VarTextBox(x, y, text, object, variable){
+function VarTextBox(x, y, object, variable){
     
-    this.textbox = new PIXI.Text(text);
-    this.base_text = text;
-    this.x = x;
-    this.y = y;
+    this.textbox = new PIXI.Text("");
+    this.textbox.x = x;
+    this.textbox.y = y;
     this.object = object;
     this.variable = variable;
 
 
     this.update = function(){
-        this.textbox.text = this.base_text + this.object[this.variable].toFixed(2);
+        this.textbox.text = this.variable + ": " + this.object[this.variable].toFixed(2);
     };
 }
