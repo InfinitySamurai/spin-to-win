@@ -9,6 +9,6 @@ function VarTextBox(x, y, text, object, variable){
 
 
     this.update = function(){
-        this.textbox.text = this.base_text + this.object[this.variable];
+        this.textbox.text = this.base_text + this.object[this.variable].toFixed(2);
     };
 }
