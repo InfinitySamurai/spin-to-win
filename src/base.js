@@ -21,14 +21,14 @@ function load_textures(){
     sprite.anchor.set(0.5);
     sprite.x = app.renderer.width / 2;
     sprite.y = app.renderer.height / 2;
-    sprite.height = 200;
-    sprite.width = 200;
+    sprite.height = 300;
+    sprite.width = 300;
 
     app.stage.addChild(sprite);
 };
 
 function create_objects(){
-    spinner = new Spinner(0, 1, 2, 0.2, sprite);
+    spinner = new Spinner(0, 1, 1, 0.2, sprite);
 
 };
 
