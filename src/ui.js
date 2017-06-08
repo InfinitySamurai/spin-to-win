@@ -1,6 +1,6 @@
 function UI(){
     this.ui_elements = [];
-    this.box = new VarTextBox(30,30,"Speed: ", spinner.speed);
+    this.box = new VarTextBox(30,30,"Speed: ", spinner, "speed");
     this.ui_elements.push(this.box);
 
 

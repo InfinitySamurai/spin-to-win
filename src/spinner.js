@@ -10,8 +10,12 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     this.click_strength = click_strength;
     this.click_strength_final = null;
 
+    this.getSpeed = function(){
+        return this.speed;
+    };
+
     
-    this.adjusted_numbers = function(tickrate){
+    this.adjustedNumbers = function(tickrate){
         this.speed_final = this.speed/tickrate*circle_radians;
         this.decay_final = this.decay/tickrate;
         this.max_speed_final = this.max_speed/tickrate;
@@ -19,7 +23,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     }
 
     this.update = function(delta){
-        this.adjusted_numbers(tickrate);
+        this.adjustedNumbers(tickrate);
         if(this.decay_on){
             this.changeSpeed(-this.decay_final*delta);
         }
