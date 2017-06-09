@@ -49,7 +49,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     };
 
     this.progressBox = function(){
-        var minx = (app.stage.width / 2);
+        var minx = (app.renderer.width / 2) - (this.sprite.width / 2);
         var miny = sprite.y + sprite.height / 2;
         var width = this.sprite.width;
         var height = 50;
