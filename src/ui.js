@@ -1,9 +1,10 @@
 function UI(){
+    this.rotation_units = " rotations/second";
     this.ui_elements = [];
-    this.ui_elements.push(new VarTextBox(30,30, spinner, "speed"));
-    this.ui_elements.push(new VarTextBox(30,100, spinner, "decay"));
-    this.ui_elements.push(new VarTextBox(30,200, spinner, "max_speed"));
-
+    this.ui_elements.push(new VarTextBox(30,30, spinner, "speed", this.rotation_units));
+    this.ui_elements.push(new VarTextBox(30,60, spinner, "decay", this.rotation_units));
+    this.ui_elements.push(new VarTextBox(30,90, spinner, "max_speed", this.rotation_units));
+    this.ui_elements.push(new VarTextBox(30,120, spinner, "click_strength", this.rotation_units));
     
     for(var i = 0; i < this.ui_elements.length; i++){
         app.stage.addChild(this.ui_elements[i].textbox);
