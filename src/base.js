@@ -5,6 +5,7 @@ var app = null;
 var sprite = null;
 var resolution = { x:1024, y:768};
 var ui = null;
+var graphics = null;
 
 
 window.onload = game_setup;
@@ -12,6 +13,8 @@ window.onload = game_setup;
 function load_stage(){
     app = new PIXI.Application(resolution.x, resolution.y, {backgroundColor : 0x3ed1f2});
 	document.getElementById("pixi-container").appendChild(app.view);
+    graphics = new PIXI.Graphics();
+    app.stage.addChild(graphics);
 };
 
 function load_textures(){

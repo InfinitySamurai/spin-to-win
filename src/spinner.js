@@ -6,9 +6,16 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     this.decay_on = true;
 	this.max_speed = max_speed;
     this.max_speed_final = null
-    this.sprite = sprite;
     this.click_strength = click_strength;
     this.click_strength_final = null;
+
+    this.sprite = sprite;
+    // create a container for the sprite and the progress bar
+    this.spinner_container = new PIXI.Container();
+    this.spinner_container.addChild(this.sprite);
+
+    app.stage.addChild(this.spinner_container);
+
 
     this.getSpeed = function(){
         return this.speed;
@@ -28,6 +35,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
             this.changeSpeed(-this.decay_final*delta);
         }
         this.sprite.rotation += spinner.speed_final;
+        this.progress_box.update();
     };
 
     this.changeSpeed = function(amount){
@@ -40,11 +48,21 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
         }
     };
 
+    this.progressBox = function(){
+        var minx = (app.stage.width / 2);
+        var miny = sprite.y + sprite.height / 2;
+        var width = this.sprite.width;
+        var height = 50;
+        this.progress_box = new ProgressBox(minx, miny, width, height, spinner, "speed", "max_speed");
+        this.spinner_container.addChild(this.progress_box.graphics);
+    };
+
     this.onClick = function(){
         this.changeSpeed(this.click_strength);
         console.log("spinner got clicked");
     };
 
     this.sprite.on('mousedown', this.onClick, this);
+    this.progressBox();
 };
 
