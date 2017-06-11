@@ -50,9 +50,9 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
         this.progress_box = new ProgressBox(minx, miny, width, height, 
             this, "speed", "max_speed", true, true);
 
-        this.spinner_container.addChild(this.progress_box.box_graphics);
-        this.spinner_container.addChild(this.progress_box.bar_graphics);
-        this.spinner_container.addChild(this.progress_box.values);
+        this.spinner_container.addChild(this.progress_box.box_graphics, 
+                                        this.progress_box.bar_graphics, 
+                                        this.progress_box.values);
 
     };
 

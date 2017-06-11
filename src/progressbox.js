@@ -47,4 +47,5 @@ function ProgressBox(x, y, width, height, object, variable, max_variable, show_v
         this.update_bar(current_val, current_max);
         this.update_text(current_val, current_max);
     };
+
 }

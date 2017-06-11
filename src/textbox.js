@@ -1,4 +1,4 @@
-function VarTextBox(x, y, object, variable, units){
+function VarTextBox(x, y, object, variable, units, prefix){
     
     this.textbox = new PIXI.Text("");
     this.textbox.x = x;
@@ -9,7 +9,12 @@ function VarTextBox(x, y, object, variable, units){
 
 
     this.update = function(){
-        this.textbox.text = this.variable + ": " + 
-            this.object[this.variable].toFixed(2) + this.units;
+        var value = this.object[this.variable].toFixed(2);
+        if(prefix){
+            this.textbox.text = this.variable + ": " + this.units + value;
+        }
+        else{
+            this.textbox.text = this.variable + ": " + value + this.units;
+        }
     };
 }

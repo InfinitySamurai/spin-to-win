@@ -5,6 +5,7 @@ var app = null;
 var sprite = null;
 var resolution = { x:1024, y:768};
 var ui = null;
+var state = null;
 
 window.onload = game_setup;
 
@@ -27,6 +28,7 @@ function load_textures(){
 
 function create_objects(){
     spinner = new Spinner(0, 1, 1, 0.2, sprite);
+    stats = new Stats();
 
 };
 
