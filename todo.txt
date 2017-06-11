@@ -6,3 +6,4 @@
 (B) clean up how progress bar displays text +optimise
 (A) change how the spinner adds its progress bar to its own container, perhaps pass the object that the bar should attach itself to in as an argument
 (A) make objects register themselves with the UI
+(A) fix money calculation, you get more than $1 for a spin at the moment
