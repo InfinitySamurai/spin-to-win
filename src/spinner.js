@@ -16,12 +16,6 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
 
     app.stage.addChild(this.spinner_container);
 
-
-    this.getSpeed = function(){
-        return this.speed;
-    };
-
-    
     this.adjustedNumbers = function(tickrate){
         this.speed_final = this.speed/tickrate*circle_radians;
         this.decay_final = this.decay/tickrate;
@@ -53,8 +47,12 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
         var miny = sprite.y + sprite.height / 2;
         var width = this.sprite.width;
         var height = 50;
-        this.progress_box = new ProgressBox(minx, miny, width, height, spinner, "speed", "max_speed");
-        this.spinner_container.addChild(this.progress_box.graphics);
+        this.progress_box = new ProgressBox(minx, miny, width, height, 
+            this, "speed", "max_speed");
+
+        this.spinner_container.addChild(this.progress_box.box_graphics);
+        this.spinner_container.addChild(this.progress_box.bar_graphics);
+
     };
 
     this.onClick = function(){
