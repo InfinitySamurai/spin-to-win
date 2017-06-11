@@ -44,14 +44,15 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
 
     this.progressBox = function(){
         var minx = (app.renderer.width / 2) - (this.sprite.width / 2);
-        var miny = sprite.y + sprite.height / 2;
+        var miny = sprite.y + sprite.height / 2 + 10;
         var width = this.sprite.width;
         var height = 50;
         this.progress_box = new ProgressBox(minx, miny, width, height, 
-            this, "speed", "max_speed");
+            this, "speed", "max_speed", true, true);
 
         this.spinner_container.addChild(this.progress_box.box_graphics);
         this.spinner_container.addChild(this.progress_box.bar_graphics);
+        this.spinner_container.addChild(this.progress_box.values);
 
     };
 
