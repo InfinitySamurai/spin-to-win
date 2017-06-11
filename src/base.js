@@ -27,9 +27,8 @@ function load_textures(){
 };
 
 function create_objects(){
-    spinner = new Spinner(0, 1, 1, 0.2, sprite);
     stats = new Stats();
-
+    spinner = new Spinner(0, 1, 1, 0.2, 1, sprite);
 };
 
 

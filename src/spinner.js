@@ -1,4 +1,4 @@
-function Spinner(start_speed, decay, max_speed, click_strength, sprite){
+function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, sprite){
     this.speed_final = null
 	this.speed = start_speed;
     this.decay_final = null;
@@ -8,6 +8,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
     this.max_speed_final = null
     this.click_strength = click_strength;
     this.click_strength_final = null;
+    this.money_per_spin = money_per_spin;
 
     this.sprite = sprite;
     // create a container for the sprite and the progress bar
@@ -30,6 +31,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, sprite){
         }
         this.sprite.rotation += spinner.speed_final;
         this.progress_box.update();
+        stats.addMoney(this.money_per_spin * this.speed_final / 2 * Math.PI);
     };
 
     this.changeSpeed = function(amount){

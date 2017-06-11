@@ -10,6 +10,7 @@ function UI(){
         this.ui_elements.push(new VarTextBox(30,60, spinner, "decay", this.rotation_units, false));
         this.ui_elements.push(new VarTextBox(30,90, spinner, "max_speed", this.rotation_units, false));
         this.ui_elements.push(new VarTextBox(30,120, spinner, "click_strength", this.rotation_units, false));
+        this.ui_elements.push(new VarTextBox(30,150, spinner, "money_per_spin", " $/rotation", false));
         this.money_display();
 
         for(var i = 0; i < this.ui_elements.length; i++){
