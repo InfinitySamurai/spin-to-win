@@ -6,3 +6,4 @@
 (B) create a way to tie spinner stats with upgrade buttons +optimise
 (B) document the shizzle out of the code +good_practice
 (B) use money to buy upgrades +feature
+(C) create a moving bar for speeding up spinner +feature
