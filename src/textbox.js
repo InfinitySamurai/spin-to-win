@@ -1,4 +1,4 @@
-function VarTextBox(x, y, object, variable, units, prefix){
+function VarTextBox(x, y, object, variable, units, prefix=false){
     
     this.textbox = new PIXI.Text("");
     this.textbox.x = x;

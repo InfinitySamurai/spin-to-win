@@ -2,7 +2,8 @@ var tickrate = 60;
 var circle_radians = 2*Math.PI;
 var spinner = null;
 var app = null;
-var sprite = null;
+var spinner_sprite = null;
+var upgrade_texture = null;
 var resolution = { x:1024, y:768};
 var ui = null;
 var state = null;
@@ -15,20 +16,22 @@ function load_stage(){
 };
 
 function load_textures(){
-    sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
-    sprite.interactive = true;
+    spinner_sprite = PIXI.Sprite.fromImage("images/spinner-fixed2.png");
+    spinner_sprite.interactive = true;
 
-    sprite.anchor.set(0.5);
-    sprite.x = app.renderer.width / 2;
-    sprite.y = app.renderer.height / 2;
-    sprite.height = 300;
-    sprite.width = 300;
+    spinner_sprite.anchor.set(0.5);
+    spinner_sprite.x = app.renderer.width / 2;
+    spinner_sprite.y = app.renderer.height / 2;
+    spinner_sprite.height = 300;
+    spinner_sprite.width = 300;
+
+    upgrade_texture = PIXI.BaseTexture.fromImage("images/upgrade.png");
 
 };
 
 function create_objects(){
     stats = new Stats();
-    spinner = new Spinner(0, 1, 1, 0.2, 1, sprite);
+    spinner = new Spinner(0, 1, 1, 0.2, 1, spinner_sprite);
 };
 
 

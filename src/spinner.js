@@ -31,7 +31,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, 
         }
         this.sprite.rotation += spinner.speed_final;
         this.progress_box.update();
-        stats.addMoney(this.money_per_spin * this.speed_final / 2 * Math.PI);
+        stats.addMoney(this.money_per_spin * this.speed_final / 2 * Math.PI / 10);
     };
 
     this.changeSpeed = function(amount){
