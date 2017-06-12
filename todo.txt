@@ -1,9 +1,9 @@
+(A) change how the spinner adds its progress bar to its own container, perhaps pass the object that the bar should attach itself to in as an argument
+(A) fix money calculation, you get more than $1 for a spin at the moment
+(A) make objects register themselves with the UI
 (B) Decouple the spinner and the stats or reverse direction of relationship (stats get value from spinner, not spinner sets stats) +refactor
 (B) add upgrade buttons for spinner stats +feature
-(B) use money to buy upgrades +feature
+(B) clean up how progress bar displays text +optimise
 (B) create a way to tie spinner stats with upgrade buttons +optimise
 (B) document the shizzle out of the code +good_practice
-(B) clean up how progress bar displays text +optimise
-(A) change how the spinner adds its progress bar to its own container, perhaps pass the object that the bar should attach itself to in as an argument
-(A) make objects register themselves with the UI
-(A) fix money calculation, you get more than $1 for a spin at the moment
+(B) use money to buy upgrades +feature

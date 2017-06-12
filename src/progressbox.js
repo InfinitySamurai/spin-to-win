@@ -1,4 +1,4 @@
-function ProgressBox(x, y, width, height, object, variable, max_variable, show_values, show_percentage){
+function ProgressBox(x, y, width, height, object, variable, max_variable, show_values, show_percentage, target_container){
     this.box_graphics = new PIXI.Graphics();
     this.bar_graphics = new PIXI.Graphics();
     this.values = new PIXI.Text("");
@@ -13,6 +13,9 @@ function ProgressBox(x, y, width, height, object, variable, max_variable, show_v
     this.max_variable = max_variable;
     this.show_values = show_values;
     this.show_percentage = show_percentage;
+    this.target_container = target_container;
+
+    this.target_container.addChild(this.box_graphics, this.bar_graphics, this.values);
 
     this.box_graphics.lineStyle(2, 0xF0F000, 1);
     this.box_graphics.beginFill(0xFFFF53, 1);
