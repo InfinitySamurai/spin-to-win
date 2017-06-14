@@ -1,9 +1,26 @@
-function Upgrade(x, y, object, variable, initial_cost, texture){
+function Upgrade(ui_element, object, variable, initial_cost, texture, target_container){
+    this.ui_element = ui_element;
     this.object = object;
     this.variable = variable;
     this.initial_cost = initial_cost;
     this.current_cost = initial_cost;
-    this.sprite = new PIXI.Sprite.from(texture);
-    this.sprite.x = x;
-    this.sprite.y = y;
+    this.sprite = PIXI.Sprite.from(texture);
+    // all of these values need to be cleaned up and be based on screen size
+    // instead of numbers pulled from nowhere
+    this.sprite.anchor.set(0.5);
+    this.sprite.height = 25;
+    this.sprite.width = 25;
+    this.sprite.x = ui_element.x + ui_element.width + 25;
+    this.sprite.y = ui_element.y + 13; 
+    this.sprite.interactive = true;
+
+    target_container.addChild(this.sprite);
+    app.stage.addChild(this.sprite);
+
+    this.onClick = function(){
+       if(stats.money > this.current_cost){
+
+       }
+
+    };
 };
