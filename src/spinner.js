@@ -50,7 +50,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, 
         var width = this.sprite.width;
         var height = 50;
         this.progress_box = new ProgressBox(minx, miny, width, height, 
-            this, "speed", "max_speed", true, true, this.spinner_container);
+            this, "speed", "max_speed", true, false, this.spinner_container);
     };
 
     this.onClick = function(){
