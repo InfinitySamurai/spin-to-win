@@ -25,9 +25,9 @@ function UI(){
         var yseperation = 30;
         var starty = 30;
         var baseunit = this.rotation_units;
-        var stats = ["speed", "decay", "max_speed", "click_strength", "money_per_spin"];
-        var units = [baseunit, baseunit, baseunit, baseunit, " $/rotation"];
-        var increment = [true, false, true, true, true];
+        var stats = ["speed", "decay", "min_speed", "max_speed", "click_strength", "money_per_spin"];
+        var units = [baseunit, baseunit, baseunit, baseunit, baseunit, " $/rotation"];
+        var increment = [true, false, true, true, true, true];
 
         for(var i = 0; i < stats.length; i++){
             var posy = starty + i * yseperation;

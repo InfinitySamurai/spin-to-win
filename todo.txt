@@ -1,8 +1,8 @@
+(A) create a better structure for managing upgrade +optimise
 (A) fix money calculation, amount is divided by 10 but I don't know why I need to do this.
 (A) make objects register themselves with the UI
 (B) Decouple the spinner and the stats or reverse direction of relationship (stats get value from spinner, not spinner sets stats) +refactor
 (B) clean up how progress bar displays text +optimise
-(B) round the numbers for the progress bar +optimise
 (B) document the shizzle out of the code +good_practice
+(B) round the numbers for the progress bar +optimise
 (C) create a moving bar for speeding up spinner +feature
-(A) create a better structure for managing upgrade +optimise

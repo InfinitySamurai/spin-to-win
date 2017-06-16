@@ -1,9 +1,11 @@
-function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, sprite){
+function Spinner(start_speed, decay, min_speed, max_speed, click_strength, money_per_spin, sprite){
     this.speed_final = null
 	this.speed = start_speed;
     this.decay_final = null;
 	this.decay = decay;
     this.decay_on = true;
+    this.min_speed = min_speed;
+    this.min_speed_final = 0
 	this.max_speed = max_speed;
     this.max_speed_final = null
     this.click_strength = click_strength;
@@ -22,6 +24,7 @@ function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, 
         this.decay_final = this.decay/tickrate;
         this.max_speed_final = this.max_speed/tickrate;
         this.click_strength_final = this.click_strength/tickrate;
+        this.min_speed_final = this.min_speed/tickrate;
     }
 
     this.update = function(delta){
@@ -39,8 +42,8 @@ function Spinner(start_speed, decay, max_speed, click_strength, money_per_spin, 
         if(this.speed > this.max_speed){
             this.speed = this.max_speed;
         }
-        else if(this.speed < 0){
-            this.speed = 0;
+        else if(this.speed < this.min_speed){
+            this.speed = this.min_speed;
         }
     };
 
